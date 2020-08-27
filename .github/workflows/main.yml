@@ -25,7 +25,7 @@ jobs:
           resolution: '1280x1024x8'
           path: '/image.png'
           sleep: 10
-          program: '$GITHUB_WORKSPACE/LIKO-12_V1.1.0_Linux_x86_64.AppImage'
+          program: 'LIKO-12_V1.1.0_Linux_x86_64.AppImage'
       
       # Runs a set of commands using the runners shell
       - uses: actions/upload-artifact@v2
