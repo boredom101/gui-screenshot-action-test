@@ -19,8 +19,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - run: 'sudo apt-get update && sudo apt-get install -y libfuse2'
-      - run: 'sudo modprobe fuse && sudo groupadd fuse && sudo usermod -a -G fuse $(whoami)'
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
       
       # Runs a single command using the runners shell
       - uses: boredom101/gui-screenshot-action@master
@@ -28,7 +29,7 @@ jobs:
           resolution: '1280x1024x8'
           path: '/image.png'
           sleep: 10
-          program: './LIKO-12_V1.1.0_Linux_x86_64.AppImage'
+          program: './main.py'
       
       # Runs a set of commands using the runners shell
       - uses: actions/upload-artifact@v2
