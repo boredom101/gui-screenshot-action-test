@@ -1,7 +1,9 @@
+import tkinter
+
 top = tkinter.Tk()
 
-var = StringVar()
-label = Label( root, textvariable = var, relief = RAISED )
+var = tkinter.StringVar()
+label = tkinter.Label( root, textvariable = var, relief = tkinter.RAISED )
 
 var.set("Hey!? How are you doing?")
 label.pack()
