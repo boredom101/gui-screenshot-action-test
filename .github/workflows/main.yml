@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - uses: boredom101/gui-screenshot-action
+      - uses: boredom101/gui-screenshot-action@master
         with:
           resolution: '1280x1024x8'
           path: '/image.png'
