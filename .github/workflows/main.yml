@@ -19,13 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-      
-      - uses: JackMcKew/pyinstaller-action-linux@main
-        with:
-          path: .
+      - run: 'sudo add-apt-repository ppa:bartbes/love-stable && sudo apt-get update && sudo apt-get install love'
       
       # Runs a single command using the runners shell
       - uses: boredom101/gui-screenshot-action@master
@@ -33,7 +27,7 @@ jobs:
           resolution: '1280x1024x8'
           path: 'image.png'
           sleep: 20
-          program: './dist/linux'
+          program: 'love'
       
       # Runs a set of commands using the runners shell
       - uses: actions/upload-artifact@v2
